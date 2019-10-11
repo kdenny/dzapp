@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+  WSGIScriptAlias / PROJECT_PATH/PROJECT_NAME/PROJECT_NAME/wsgi.py
+  Alias /static PROJECT_PATH/PROJECT_NAME/static/
+  Alias /media PROJECT_PATH/PROJECT_NAME/media/
+
+ ServerName www.example.com
+
+ <Directory />
+   Options -Indexes
+ </Directory>
+ <Directory PROJECT_PATH/PROJECT_NAME/>
+   Order allow,deny
+   Allow from all
+   Options -Indexes
+ </Directory>
+
+</VirtualHost> 
